@@ -83,7 +83,7 @@ class HiverRadeem extends PluginBase implements Listener {
 	}
 	
 	public function onCommand(CommandSender $player, Command $cmd, String $label, Array $args) : Bool {
-		if($cmd->getName() === "rcode"){
+		if($cmd->getName() === "hiverradeem"){
 			if($player instanceof Player){
 				if(!isset($args[0])){
 					$this->sendManage($player, "You can exchange your radeem code to get exclusive prizes.");
@@ -91,30 +91,30 @@ class HiverRadeem extends PluginBase implements Listener {
 				}
 			    if($args[0] === "add"){
 				    if(!isset($args[1])){
-					    $player->sendMessage("(RCode) > Usage /rcode add (code) (msg) (private|public) (commands..)");
+					    $player->sendMessage("(HiverRadeem) > Usage /hiverradeem add (code) (msg) (private|public) (commands..)");
 					    return true;
 					}
 					if(!isset($args[2])){
-					    $player->sendMessage("(RCode) > Usage /rcode add (code) (msg) (private|public) (commands..)");
+					    $player->sendMessage("(HiverRadeem) > Usage /hiverradeem add (code) (msg) (private|public) (commands..)");
 					    return true;
 					}
 					if(!isset($args[3])){
-					    $player->sendMessage("(RCode) > Usage /rcode add (code) (msg) (private|public) (commands..)");
+					    $player->sendMessage("(HiverRadeem) > Usage /hiverradeem add (code) (msg) (private|public) (commands..)");
 					    return true;
 					}
 					if(!isset($args[4])){
-					    $player->sendMessage("(RCode) > Usage /rcode add (code) (msg) (private|public) (commands..)");
+					    $player->sendMessage("(HiverRadeem) > Usage /hiverradeem add (code) (msg) (private|public) (commands..)");
 					    return true;
 					}
 					if(isset($this->code["code-data"][$args[1]])){
-						$player->sendMessage("(RCode) > This code already created!");
+						$player->sendMessage("(HiverRadeem) > This code already created!");
 						return true;
 					}
 				    $this->addCode($args[1], $args[2], $args[3], $args[4]);
-				    $player->sendMessage("(RCode) >  Successfully created new radeem code.");
+				    $player->sendMessage("(HiverRadeem) >  Successfully created new radeem code.");
 				}
 			}else{
-				$player->sendMessage("(RCode) > Usage commands on server.");
+				$player->sendMessage("(HiverRadeem) > Usage commands on server.");
 			}
 		}
 		return true;
